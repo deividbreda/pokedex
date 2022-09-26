@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" href="./assets/favicon.png">
+
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/responsivo.css">
+
+        <script defer src="./js/script.js"></script>
+
+        <title> Pokedex </title>
+    </head>
+    <body>
+        <div id="pokedex">
+            <div class="container">
+                <a href="/"> <img class="logo" src="./images/logo.png" alt=""> </a>
+                <form class="formSearch">
+                    <div class="input">
+                        <input class="inputSearch" type="search" required placeholder="Procurar...">
+                        <button> Buscar </button>
+                    </div>
+                </form>
+                <div class="content">
+                    <div class="pokemon">
+                        <img class="pokemonImg" src="" alt="">
+                    </div>
+                    
+                    <div class="infos">
+                        <div class="title">
+                            <span class="pokemonId"> </span> 
+                            <strong class="pokemonName"> </strong>
+                        </div>
+                        <div class="types">
+                            <span class="pokemonType"> Fire </span>
+                        </div>
+                        <div class="hab">
+                            <div class="name">
+                                <span> hp </span>
+                                <span> attack </span>
+                                <span> defense </span>
+                                <span> special-atack </span>
+                                <span> special-defense </span>
+                                <span> speed </span>
+                            </div>
+                            <div class="qtd">
+                                <span class="pokemonHp"> </span>
+                                <span class="pokemonAttack"> </span>
+                                <span class="pokemonDefense"> </span>
+                                <span class="pokemonSpecialA"> </span>
+                                <span class="pokemonSpecialD"> </span>
+                                <span class="pokemonSpeed"> </span>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="bntPrev"> &lt; Prev </button>
+                            <button class="btnNext"> Next &gt; </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

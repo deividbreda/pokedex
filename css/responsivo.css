@@ -1,0 +1,9 @@
+@media(max-width: 560px) {
+    body {
+        background-size: 100%;
+    }
+
+    #pokedex .content {
+        grid-template-columns: repeat(1, 2fr);
+    }
+}
