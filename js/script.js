@@ -91,14 +91,10 @@ async function renderPokemon(pokemon) {
         pokemonType.style.background = '#afafaf';
         pokemonType.innerHTML = '---';
 
-        pokemonHp.innerHTML = '-';
-        pokemonAttack.innerHTML = '-';
-        pokemonDefense.innerHTML = '-';
-        pokemonSpecialA.innerHTML = '-';
-        pokemonSpecialD.innerHTML = '-';
-        pokemonSpeed.innerHTML = '-';
+        $('.qtd span').text('-');
 
         searchPokemon = 0;
+        inputSearch.value = '';
     }
 }
 
@@ -121,3 +117,57 @@ btnNext.addEventListener('click', () => {
 });
 
 renderPokemon(searchPokemon);
+
+
+// Todos os pokemons
+const pokemonsContainer = document.querySelector('.pokemons');
+
+const btnMore = document.querySelector('.btnMore');
+
+let pokemons_number = 16;
+let pokemons_show = 1;
+
+btnMore.addEventListener('click', () => {
+    pokemons_number = pokemons_number + 16;
+    pokemons_show = pokemons_show + 16;
+    fetchAllPokemons(pokemons_show, pokemons_number);
+});
+
+const fetchAllPokemons = async (show, number) => {
+    for(let i = show; i <= number; i++) {
+        await getPokemon(i);
+    }
+}
+
+const getPokemon = async id => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const res = await fetch(url);
+    const pokemon = await res.json();
+    createPokemonCard(pokemon);
+}
+
+fetchAllPokemons(pokemons_show, pokemons_number);
+
+function createPokemonCard(pokemon) {
+    const pokemonEl = document.createElement('div');
+    pokemonEl.classList.add('pokemon');
+
+    const pokemonInnerHtml = `
+        <a href="#pokedex">
+            <button class="viewPokemon" onclick="viewPokemon(${pokemon.id})">
+                <div class="pokemonsContent">
+                    <img src="${pokemon.sprites.versions['generation-v']['black-white'].animated.front_default}" />
+                </div>
+            </button>
+        </a>
+    `;
+
+    pokemonEl.innerHTML = pokemonInnerHtml;
+    pokemonsContainer.appendChild(pokemonEl);
+}
+
+function viewPokemon(id){
+    searchPokemon = id;
+    renderPokemon(searchPokemon);
+}
+
