@@ -15,13 +15,18 @@
         <link rel="stylesheet" href="./css/responsivo.css">
 
         <script defer src="./js/script.js"></script>
+        <script defer src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
         <title> Pokedex </title>
     </head>
     <body>
         <div id="pokedex">
             <div class="container">
-                <a href="/"> <img class="logo" src="./images/logo.png" alt=""> </a>
+                <div class="logoContent">
+                    <a href="/"> <img class="logo" src="./images/logo.png" alt=""> </a>
+                    <a href="https://portfolio-deividbreda.vercel.app/"> Desenvolvido por Deivid Breda </a>
+                </div>
+            
                 <form class="formSearch">
                     <div class="input">
                         <input class="inputSearch" type="search" required placeholder="Procurar...">
@@ -39,7 +44,7 @@
                             <strong class="pokemonName"> </strong>
                         </div>
                         <div class="types">
-                            <span class="pokemonType"> Fire </span>
+                            <span class="pokemonType"> </span>
                         </div>
                         <div class="hab">
                             <div class="name">
@@ -64,6 +69,10 @@
                             <button class="btnNext"> Next &gt; </button>
                         </div>
                     </div>
+                </div>
+                <div class="pokemons"> </div>
+                <div class="buttons">
+                    <button class="btnMore"> Show More </button>
                 </div>
             </div>
         </div>

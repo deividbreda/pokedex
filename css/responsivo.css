@@ -6,4 +6,8 @@
     #pokedex .content {
         grid-template-columns: repeat(1, 2fr);
     }
+
+    #pokedex .pokemons {
+        grid-template-columns: repeat(3, 2fr);
+    }
 }

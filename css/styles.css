@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oxanium', cursive;
+    
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -16,9 +21,10 @@ body {
 }
 
 #pokedex {
-    max-width: 728px;
+    max-width: 640px;
     margin: auto;
-    padding: 20px;
+    padding: 32px 20px;
+    width: 100%;
 }
 
 #pokedex .container {
@@ -27,6 +33,19 @@ body {
     align-items: center;
     justify-content: center; 
     gap: 32px;
+}
+
+#pokedex .logoContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+#pokedex .logoContent a {
+    text-decoration: none;
+    color: #18285e;
+    font-size: 13px;
 }
 
 #pokedex .logo {
@@ -75,10 +94,12 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     align-items: center;
+    justify-content: space-between;
     gap: 32px;
     background: #ebebebbb;
     border-radius: 6px;
     padding: 16px;
+    width: 100%;
 }
 
 #pokedex .content .pokemon {
@@ -167,4 +188,62 @@ body {
 
 #pokedex .content .infos .buttons button:active {
     box-shadow: inset -4px 4px 0 #222;
+}
+
+#pokedex .pokemons {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    gap: 16px;
+    width: 100%;
+}
+
+#pokedex .pokemons .pokemon {
+    background: #ffffff;
+    padding: 16px;
+    display: inherit;
+    border: 1px solid rgb(114, 114, 114);
+    border-radius: 6px;
+    box-shadow: rgb(159 159 159) -3px 1px 0px, rgb(121 121 121) -4px 3px 0px;
+}
+
+#pokedex .pokemons .pokemon a {
+    display: inherit;
+}
+
+#pokedex .pokemons .pokemon button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#pokedex .pokemons .pokemon .pokemonsContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#pokedex .pokemons .pokemon .pokemonsContent img {
+    width: 100%;
+}
+
+#pokedex .pokemons .pokemon .pokemonsContent strong {
+
+}
+
+#pokedex .buttons .btnMore {
+    border-radius: 32px;
+    background: #699bff;
+    box-shadow: -2px 1px 0 #4170cf, -3px 2px 0 #3352b6;
+    color: #fff;
+    border: 1px solid #3352b7;
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: all .3s;
+    font-size: 22px;
+}
+
+#pokedex .buttons .btnMore:active  {
+    box-shadow: inset -4px 4px 0 #3352b7;
 }
