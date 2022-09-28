@@ -32,7 +32,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center; 
+    gap: 64px;
+}
+
+#pokedex .container main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
     gap: 32px;
+    width: 100%;
 }
 
 #pokedex .logoContent {
@@ -190,14 +199,23 @@ body {
     box-shadow: inset -4px 4px 0 #222;
 }
 
-#pokedex .pokemons {
+#pokedex .pokemonList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+#pokedex .pokemonList .pokemons {
     display: grid;
     grid-template-columns: repeat(4, 2fr);
     gap: 16px;
     width: 100%;
 }
 
-#pokedex .pokemons .pokemon {
+#pokedex .pokemonList .pokemons .pokemon {
     background: #ffffff;
     padding: 16px;
     display: inherit;
@@ -206,17 +224,17 @@ body {
     box-shadow: rgb(159 159 159) -3px 1px 0px, rgb(121 121 121) -4px 3px 0px;
 }
 
-#pokedex .pokemons .pokemon a {
+#pokedex .pokemonList .pokemons .pokemon a {
     display: inherit;
 }
 
-#pokedex .pokemons .pokemon button {
+#pokedex .pokemonList .pokemons .pokemon button {
     background: none;
     border: none;
     cursor: pointer;
 }
 
-#pokedex .pokemons .pokemon .pokemonsContent {
+#pokedex .pokemonList .pokemons .pokemon .pokemonsContent {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -224,15 +242,11 @@ body {
     gap: 8px;
 }
 
-#pokedex .pokemons .pokemon .pokemonsContent img {
+#pokedex .pokemonList .pokemons .pokemon .pokemonsContent img {
     width: 100%;
 }
 
-#pokedex .pokemons .pokemon .pokemonsContent strong {
-
-}
-
-#pokedex .buttons .btnMore {
+#pokedex .pokemonList .buttons .btnMore {
     border-radius: 32px;
     background: #699bff;
     box-shadow: -2px 1px 0 #4170cf, -3px 2px 0 #3352b6;
@@ -244,6 +258,6 @@ body {
     font-size: 22px;
 }
 
-#pokedex .buttons .btnMore:active  {
+#pokedex .pokemonList .buttons .btnMore:active  {
     box-shadow: inset -4px 4px 0 #3352b7;
 }

@@ -11,68 +11,78 @@
 
         <link rel="icon" href="./assets/favicon.png">
 
+        <!-- CSS -->
         <link rel="stylesheet" href="./css/styles.css">
         <link rel="stylesheet" href="./css/responsivo.css">
 
+        <!-- JS -->
         <script defer src="./js/script.js"></script>
-        <script defer src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
         <title> Pokedex </title>
     </head>
     <body>
         <div id="pokedex">
             <div class="container">
-                <div class="logoContent">
-                    <a href="/"> <img class="logo" src="./images/logo.png" alt=""> </a>
-                    <a href="https://portfolio-deividbreda.vercel.app/"> Desenvolvido por Deivid Breda </a>
-                </div>
-            
-                <form class="formSearch">
-                    <div class="input">
-                        <input class="inputSearch" type="search" required placeholder="Procurar...">
-                        <button> Buscar </button>
+                <main>
+                    <div class="logoContent">
+                        <a href="/"> <img class="logo" src="./images/logo.png" alt=""> </a>
+                        <a href="https://portfolio-deividbreda.vercel.app/"> Desenvolvido por Deivid Breda </a>
                     </div>
-                </form>
-                <div class="content">
-                    <div class="pokemon">
-                        <img class="pokemonImg" src="" alt="">
-                    </div>
-                    
-                    <div class="infos">
-                        <div class="title">
-                            <span class="pokemonId"> </span> 
-                            <strong class="pokemonName"> </strong>
+                
+                    <form class="formSearch">
+                        <div class="input">
+                            <input class="inputSearch" type="search" required placeholder="ID or Name...">
+                            <button> Buscar </button>
                         </div>
-                        <div class="types">
-                            <span class="pokemonType"> </span>
+                    </form>
+
+                    <div class="content">
+                        <div class="pokemon">
+                            <img class="pokemonImg" src="" alt="">
                         </div>
-                        <div class="hab">
-                            <div class="name">
-                                <span> hp </span>
-                                <span> attack </span>
-                                <span> defense </span>
-                                <span> special-atack </span>
-                                <span> special-defense </span>
-                                <span> speed </span>
+                        
+                        <div class="infos">
+                            <div class="title">
+                                <span class="pokemonId"> </span> 
+                                <strong class="pokemonName"> </strong>
                             </div>
-                            <div class="qtd">
-                                <span class="pokemonHp"> </span>
-                                <span class="pokemonAttack"> </span>
-                                <span class="pokemonDefense"> </span>
-                                <span class="pokemonSpecialA"> </span>
-                                <span class="pokemonSpecialD"> </span>
-                                <span class="pokemonSpeed"> </span>
+                            <div class="types">
+                                <span class="pokemonType"> </span>
+                            </div>
+                            <div class="hab">
+                                <div class="name">
+                                    <span> hp </span>
+                                    <span> attack </span>
+                                    <span> defense </span>
+                                    <span> special-atack </span>
+                                    <span> special-defense </span>
+                                    <span> speed </span>
+                                </div>
+                                <div class="qtd">
+                                    <span class="pokemonHp"> </span>
+                                    <span class="pokemonAttack"> </span>
+                                    <span class="pokemonDefense"> </span>
+                                    <span class="pokemonSpecialA"> </span>
+                                    <span class="pokemonSpecialD"> </span>
+                                    <span class="pokemonSpeed"> </span>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button class="btnPrev"> &lt; Prev </button>
+                                <button class="btnNext"> Next &gt; </button>
                             </div>
                         </div>
-                        <div class="buttons">
-                            <button class="bntPrev"> &lt; Prev </button>
-                            <button class="btnNext"> Next &gt; </button>
-                        </div>
                     </div>
-                </div>
-                <div class="pokemons"> </div>
-                <div class="buttons">
-                    <button class="btnMore"> Show More </button>
+                </main>
+                
+                <div class="pokemonList">
+                    <div class="pokemons"> </div>
+                    <div class="buttons">
+                        <button class="btnMore"> Show More </button>
+                    </div>
                 </div>
             </div>
         </div>

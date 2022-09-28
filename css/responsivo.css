@@ -7,7 +7,7 @@
         grid-template-columns: repeat(1, 2fr);
     }
 
-    #pokedex .pokemons {
+    #pokedex .pokemonList .pokemons {
         grid-template-columns: repeat(3, 2fr);
     }
 }
