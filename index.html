@@ -21,6 +21,9 @@
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+        <!-- Chart Js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
         <title> Pokedex </title>
     </head>
     <body>
@@ -29,13 +32,13 @@
                 <main>
                     <div class="logoContent">
                         <a href="/"> <img class="logo" src="./images/logo.png" alt=""> </a>
-                        <a href="https://portfolio-deividbreda.vercel.app/"> Desenvolvido por Deivid Breda </a>
+                        <a href="https://portfolio-deividbreda.vercel.app/"> Developed by Deivid Breda </a>
                     </div>
                 
                     <form class="formSearch">
                         <div class="input">
                             <input class="inputSearch" type="search" required placeholder="ID or Name...">
-                            <button> Buscar </button>
+                            <button> Search </button>
                         </div>
                     </form>
 
@@ -77,6 +80,20 @@
                         </div>
                     </div>
                 </main>
+
+                <div class="compare">
+                    <div class="names">
+                        <strong> Pokemon Comparator </strong>
+                        <form class="formCompare" action="">
+                            <div class="inputs">
+                                <input class="firstPokemon" required type="text" placeholder="First... ID or Name...">
+                                <input class="secondPokemon" required type="text" placeholder="Second... ID or Name...">
+                            </div>
+                            <button type="submit"> Compare </button>                       
+                        </form>
+                        <button class="buttonClose"> <img src="https://www.freeiconspng.com/thumbs/restart-icon/black-panel-restart-system-icon--6.png" alt=""> </button>
+                    </div>
+                </div>
                 
                 <div class="pokemonList">
                     <div class="pokemons"> </div>

@@ -199,6 +199,94 @@ body {
     box-shadow: inset -4px 4px 0 #222;
 }
 
+#pokedex .compare {
+    width: 100%;
+}
+
+#pokedex .compare .names {
+    background: #699bfe;
+    padding: 22px;
+    box-shadow: -2px 1px 0 #4170cf, -3px 2px 0 #3352b6;
+    color: #fff;
+    border: 1px solid #3352b7;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+#pokedex .compare .names .buttonClose {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: 1px solid #666;
+    background: #e1e1e1;
+    border-radius: 32px;
+    padding: 4px;
+    box-shadow: -1px 1px 0 #909090, -2px 2px 0 #737271;
+}
+
+#pokedex .compare .names .buttonClose:active {
+    box-shadow: inset -4px 4px 0 #737271;
+}
+
+#pokedex .compare .names .buttonClose img {
+    width: 15px;
+    display: inherit;
+    opacity: 0.7;
+}
+
+#pokedex .compare .names form {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    width: 100%;
+}
+
+#pokedex .compare .names form .inputs {
+    display: flex;
+    gap: 16px;
+}
+
+#pokedex .compare .names form .inputs input {
+    border-radius: 32px;
+    border: none;
+    outline: 0;
+    padding: 5px 12px;
+    width: 100%;
+}
+
+#pokedex .compare .names form button {
+    border-radius: 32px;
+    background: #f9cb11;
+    box-shadow: -2px 1px 0 #ca9603, -3px 2px 0 #946e00;
+    color: #836100;
+    border: 1px solid #af8202;
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#pokedex .compare .names form button:active {
+    box-shadow: inset -4px 4px 0 #af8202;
+}
+
+#pokedex .compare .chart {
+    background: #ffffff;
+    padding: 16px;
+    margin: 0 16px;
+    position: relative;
+    z-index: 1;
+    border-radius: 0px 0px 6px 6px;
+}
+
+#pokedex .compare .names .notFound span {
+    color: red;
+    font-weight: bold;
+}
+
 #pokedex .pokemonList {
     width: 100%;
     display: flex;
@@ -255,7 +343,7 @@ body {
     padding: 4px 12px;
     cursor: pointer;
     transition: all .3s;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 #pokedex .pokemonList .buttons .btnMore:active  {
