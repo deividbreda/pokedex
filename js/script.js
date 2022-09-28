@@ -148,3 +148,92 @@ function viewPokemon(id){
     searchPokemon = id;
     renderPokemon(searchPokemon);
 }
+
+$('.formCompare').submit(async function(event) {
+    event.preventDefault();
+
+    const first = await fetch(`https://pokeapi.co/api/v2/pokemon/${$('.firstPokemon').val().toLowerCase()}`)
+    const last = await fetch(`https://pokeapi.co/api/v2/pokemon/${$('.secondPokemon').val().toLowerCase()}`)
+
+    $('.formCompare').each(function(){
+        this.reset();
+    });
+
+    if(first.status === 200 && last.status === 200){
+        $('.notFound').remove();
+        const firstPokemon = await first.json();
+        const secondPokemon = await last.json();
+        createChart(firstPokemon, secondPokemon);
+    } else {
+        $('.notFound').remove();
+        $('.names').prepend(`
+            <div class="notFound">
+                <span> Err Pokemon not found :C  </span>
+            </div>
+        `)
+    }
+})
+
+function createChart(firstPokemon, secondPokemon){
+    $('.chart').remove();
+
+    $(`
+        <div class="chart">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+    `).appendTo('.compare') 
+
+    firstName = firstPokemon.name
+    secondName = secondPokemon.name
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['HP', 'Attack', 'Defense', 'Sp. Attack', 'Sp. Defense', 'Speed'],
+            datasets: [{
+                label: `${firstName[0].toUpperCase() + firstName.substring(1)}`,
+                data: [
+                    firstPokemon.stats['0'].base_stat, 
+                    firstPokemon.stats['1'].base_stat, 
+                    firstPokemon.stats['2'].base_stat, 
+                    firstPokemon.stats['3'].base_stat, 
+                    firstPokemon.stats['4'].base_stat, 
+                    firstPokemon.stats['5'].base_stat
+                ],
+
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',             
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }, 
+
+            {
+                label: `${secondName[0].toUpperCase() + secondName.substring(1)}`,
+                data: [
+                    secondPokemon.stats['0'].base_stat, 
+                    secondPokemon.stats['1'].base_stat, 
+                    secondPokemon.stats['2'].base_stat, 
+                    secondPokemon.stats['3'].base_stat, 
+                    secondPokemon.stats['4'].base_stat, 
+                    secondPokemon.stats['5'].base_stat
+                ],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+$('.buttonClose').click(function() {
+    $('.notFound').remove();
+    $('.chart').remove();
+})
